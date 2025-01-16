@@ -15,11 +15,18 @@ public class NavigationAgent : MonoBehaviour
 
 	private IEnumerator FollowPath()
 	{
-		transform.position = _route[0];
-		for (int i = 1; i < _route.WaypointCount; i++)
+		int index = 0;
+		int direction = 1;
+		transform.position = _route[index];
+		while (true)
 		{
-			_agent.SetDestination(_route[i]);
-			yield return new WaitUntil(() => IsDestinationReached(i));
+			(int nextIndex, int nextDirection) = _route.NextIndex(index, direction);
+			if (nextIndex == index) yield break;
+
+			index = nextIndex;
+			direction = nextDirection;
+			_agent.SetDestination(_route[index]);
+			yield return new WaitUntil(() => IsDestinationReached(index));
 		}
 	}
 
