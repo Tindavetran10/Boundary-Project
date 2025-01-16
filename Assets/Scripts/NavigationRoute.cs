@@ -35,4 +35,27 @@ public class NavigationRoute : MonoBehaviour
 			Gizmos.DrawLine(_waypoints[^1].transform.position + offset, _waypoints[0].transform.position + offset);
 		}
 	}
+
+	public (int nextIndex, int nextDirection) NextIndex(int currentIndex, int direction)
+	{
+		var nextIndex = currentIndex + direction;
+		var nextDirection = direction;
+		switch (_routeType)
+		{
+			case RouteType.OneWay:
+				nextIndex = Mathf.Clamp(nextIndex, 0, WaypointCount - 1);
+				break;
+			case RouteType.Loop:
+				nextIndex %= WaypointCount;
+				break;
+			case RouteType.PingPong:
+				if (direction > 0 && nextIndex >= WaypointCount - 1
+					|| direction < 0 && nextIndex <= 0)
+				{
+					nextDirection *= -1;
+				}
+				break;
+		}
+		return (nextIndex, nextDirection);
+	}
 }
