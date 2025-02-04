@@ -2,32 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DialogManager : MonoBehaviour
 {
-    public TMP_Text text;
+    [FormerlySerializedAs("text")]
+    public TMP_Text Text;
     public GameObject DialogSystem;
-    string[] words;
-    int number;
+
+    [SerializeField]
+    private TextScrollingEffect _effect;
+
+    private string[] _words;
+    private int _currentLine;
 
     public void ShowMessage(DialogData dialogData)
     {
-        number = 0;
-        words = dialogData.dialogLines;
+        _currentLine = 0;
+        _words = dialogData.dialogLines;
         DialogSystem.SetActive(true);
         Skip();
     }
     
     public void Skip()
     {
-        if(number < words.Length)
+        if (_currentLine < _words.Length)
         {
-            text.text = words[number];
-            number += 1;
+			_effect.Play(_words[_currentLine], 5);
+			_currentLine += 1;
         }
         else
         {
-            number = 0;
+            _currentLine = 0;
             DialogSystem.SetActive(false);
         }
     }
