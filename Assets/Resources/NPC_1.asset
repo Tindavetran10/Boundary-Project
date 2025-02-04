@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47e98d9869292146963d1203e064fde, type: 3}
+  m_Name: NPC_1
+  m_EditorClassIdentifier: 
+  dialogLines:
+  - Well met, traveler! Welcome to my humble shop. I've got wares from all corners
+    of the land. Take a look around, and don't hesitate to ask if anything catches
+    your eye.
+  - Ah, that's a fine piece you're looking at! It's a [item name], crafted by the
+    best artisans. It's quite rare, you know, but I'm willing to offer you a fair
+    price. How about it?
+  - A wise choice! I'm sure that [item name] will serve you well on your travels.
+    Come back anytime; I'm always getting new shipments.
