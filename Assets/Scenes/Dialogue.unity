@@ -282,10 +282,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -875,6 +875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1305638993}
   - component: {fileID: 1305638992}
+  - component: {fileID: 1305638994}
   m_Layer: 0
   m_Name: DialogManager
   m_TagString: Untagged
@@ -894,8 +895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b487e7832eb9c174087ba6fa1d705bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 426139747}
+  Text: {fileID: 426139747}
   DialogSystem: {fileID: 627483044}
+  _effect: {fileID: 1305638994}
 --- !u!4 &1305638993
 Transform:
   m_ObjectHideFlags: 0
@@ -911,6 +913,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305638994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305638991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0e1ddd03fe8b6458e12e5f227cf005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 426139747}
 --- !u!1 &1789801837
 GameObject:
   m_ObjectHideFlags: 0
