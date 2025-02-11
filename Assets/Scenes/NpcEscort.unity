@@ -1203,6 +1203,7 @@ MonoBehaviour:
   _target: {fileID: 2120221390}
   _reachingDistance: 1
   _navMeshAgent: {fileID: 1466957799}
+  _animator: {fileID: 1466957808}
 --- !u!114 &1466957806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,8 +1217,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chasingRange: 4
-  _attackingRange: 1
   _navMeshAgent: {fileID: 1466957799}
+  _animator: {fileID: 1466957808}
+--- !u!95 &1466957808 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3577072304237227703, guid: ca785d520272d194fa2cff74e8404276,
+    type: 3}
+  m_PrefabInstance: {fileID: 8286354459729485908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1466957810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466957798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b28ffe7dd74674cb4affde5a0df7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chasingAgent: {fileID: 1466957806}
+  _attackingRange: 1
+  _animator: {fileID: 1466957808}
 --- !u!1 &2120221389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1453,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1466957806}
+    - targetCorrespondingSourceObject: {fileID: 9031097392660601131, guid: ca785d520272d194fa2cff74e8404276,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1466957810}
   m_SourcePrefab: {fileID: 100100000, guid: ca785d520272d194fa2cff74e8404276, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

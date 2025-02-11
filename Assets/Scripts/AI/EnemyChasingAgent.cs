@@ -6,14 +6,14 @@ using UnityEngine.AI;
 public class EnemyChasingAgent : MonoBehaviour
 {
 	[SerializeField] private float _chasingRange;
-	[SerializeField] private float _attackingRange;
 	[SerializeField] private NavMeshAgent _navMeshAgent;
+	[SerializeField] private Animator _animator;
 
 	private Enemy _currentEnemy;
+	public Enemy CurrentEnemy => _currentEnemy;
 
 	public bool IsInChasingRange => Distance <= _chasingRange;
-	public bool IsInAttackingRange => Distance <= _attackingRange;
-	private float Distance => (_currentEnemy == null) ? float.MaxValue: Vector3.Distance(transform.position, _currentEnemy.transform.position);
+	public float Distance => (_currentEnemy == null) ? float.MaxValue: Vector3.Distance(transform.position, _currentEnemy.transform.position);
 
 	public bool HasEnemy => _currentEnemy != null;
 
@@ -49,6 +49,8 @@ public class EnemyChasingAgent : MonoBehaviour
 			_currentEnemy = null;
 		}
 	}
+
+	public void StartChasing() => _animator.CrossFade("Follow", 0.1f);
 
 	public void ChaseEnemy()
 	{
