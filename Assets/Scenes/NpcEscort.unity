@@ -1215,8 +1215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22339292a5f68d645a7ea37ec82e1c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chasingRange: 3
+  _chasingRange: 4
   _attackingRange: 1
+  _navMeshAgent: {fileID: 1466957799}
 --- !u!1 &2120221389
 GameObject:
   m_ObjectHideFlags: 0

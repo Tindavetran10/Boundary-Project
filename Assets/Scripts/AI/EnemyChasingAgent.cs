@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyChasingAgent : MonoBehaviour
 {
 	[SerializeField] private float _chasingRange;
 	[SerializeField] private float _attackingRange;
+	[SerializeField] private NavMeshAgent _navMeshAgent;
 
 	private Enemy _currentEnemy;
 
@@ -47,4 +49,12 @@ public class EnemyChasingAgent : MonoBehaviour
 			_currentEnemy = null;
 		}
 	}
+
+	public void ChaseEnemy()
+	{
+		_navMeshAgent.enabled = true;
+		_navMeshAgent.SetDestination(_currentEnemy.transform.position);
+	}
+
+	public void Stop() => _navMeshAgent.enabled = false;
 }
