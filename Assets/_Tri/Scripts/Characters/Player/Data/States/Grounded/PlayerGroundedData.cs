@@ -21,4 +21,6 @@ public class PlayerGroundedData
     [field: SerializeField] public PlayerRollData RollData { get; private set; }
     [field: SerializeField] public PlayerLightAttackData LightAttackData { get; private set; }
     [field: SerializeField] public PlayerMagmaStrikeData MagmaStrikeData { get; private set; }
+    [field: SerializeField] public PlayerElectroNovaData ElectroNovaData { get; private set; }
+    [field: SerializeField] public PlayerCelestialTempestData CelestialTempestData { get; private set; }
 }

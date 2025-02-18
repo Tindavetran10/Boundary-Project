@@ -98,4 +98,9 @@ public class Player : MonoBehaviour
     {
         return StartCoroutine(coroutine);
     }
+
+    public void DestroyEffect(GameObject gameObject, float effectDuration)
+    {
+        Destroy(gameObject, effectDuration);
+    }
 }
