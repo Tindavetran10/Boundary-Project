@@ -124,6 +124,10 @@ public class PlayerGroundedState : PlayerMovementState
         stateMachine.Player.Input.PlayerActions.LightAttack.started += OnLightAttackStarted;
 
         stateMachine.Player.Input.PlayerActions.Skill1.started += OnSkill1State;
+
+        stateMachine.Player.Input.PlayerActions.Skill2.started += OnElectroNovaState;
+
+        stateMachine.Player.Input.PlayerActions.Skill3.started += OnCelestialTempestState;
     }
 
     protected override void RemoveInputActionsCallBack()
@@ -137,6 +141,10 @@ public class PlayerGroundedState : PlayerMovementState
         stateMachine.Player.Input.PlayerActions.LightAttack.started -= OnLightAttackStarted;
 
         stateMachine.Player.Input.PlayerActions.Skill1.started -= OnSkill1State;
+
+        stateMachine.Player.Input.PlayerActions.Skill2.started -= OnElectroNovaState;
+
+        stateMachine.Player.Input.PlayerActions.Skill3.started -= OnCelestialTempestState;
     }
     protected virtual void OnMove()
     {
@@ -201,6 +209,16 @@ public class PlayerGroundedState : PlayerMovementState
     protected virtual void OnSkill1State(InputAction.CallbackContext context)
     {
         stateMachine.ChangeState(stateMachine.Skill1State);
+    }
+
+    protected virtual void OnElectroNovaState(InputAction.CallbackContext context)
+    {
+        stateMachine.ChangeState(stateMachine.ElectroNovaState);
+    }
+
+    protected virtual void OnCelestialTempestState(InputAction.CallbackContext context)
+    {
+        stateMachine.ChangeState(stateMachine.CelestialTempestState);
     }
     #endregion
 }

@@ -27,6 +27,9 @@ public class PlayerAnimationData
 
     [Header("Attack Parameter Names")]
     [SerializeField] private string lightAttackParameterName = "isLightAttacking";
+    [SerializeField] private string magmastrikeAttackParameterName = "isMagmaStrikeAttacking";
+    [SerializeField] private string electronovaAttackParameterName = "isElectroNovaAttacking";
+    [SerializeField] private string celestialtempestAttackParameterName = "isCelestialTempestAttacking";
 
     [Header("Airborne Parameter Names")]
     [SerializeField] private string fallParameterName = "isFalling";
@@ -48,6 +51,9 @@ public class PlayerAnimationData
     public int RollParameterHash { get; private set; }
     public int HardLandParameterHash { get; private set; }
     public int LightAttackParameterHash { get; private set; }
+    public int MagmaStrikeAttackParameterHash { get; private set; }
+    public int ElectroNovaAttackParameterHash { get; private set; }
+    public int CelestialTempestAttackParameterHash { get; private set; }
 
     public int FallParameterHash { get; private set; }
 
@@ -70,7 +76,11 @@ public class PlayerAnimationData
         HardLandParameterHash = Animator.StringToHash(hardStopParameterName);
         RollParameterHash = Animator.StringToHash(rollParameterName);
         HardLandParameterHash = Animator.StringToHash(hardLandParameterName);
+        
         LightAttackParameterHash = Animator.StringToHash(lightAttackParameterName);
+        MagmaStrikeAttackParameterHash = Animator.StringToHash(magmastrikeAttackParameterName);
+        ElectroNovaAttackParameterHash = Animator.StringToHash(electronovaAttackParameterName);
+        CelestialTempestAttackParameterHash = Animator.StringToHash(celestialtempestAttackParameterName);
 
         FallParameterHash = Animator.StringToHash(fallParameterName);
     }

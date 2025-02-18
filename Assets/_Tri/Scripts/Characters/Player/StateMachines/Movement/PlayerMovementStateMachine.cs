@@ -38,6 +38,10 @@ public class PlayerMovementStateMachine : StateMachine
 
     public PlayerSkill1State Skill1State { get; }
 
+    public PlayerElectroNovaState ElectroNovaState { get; }
+
+    public PlayerCelestialTempestState CelestialTempestState { get; }
+
     public PlayerMovementStateMachine(Player player)
     {
         Player = player;
@@ -63,5 +67,7 @@ public class PlayerMovementStateMachine : StateMachine
 
         LightAttackState = new PlayerLightAttackState(this);
         Skill1State = new PlayerSkill1State(this);
+        ElectroNovaState = new PlayerElectroNovaState(this);
+        CelestialTempestState = new PlayerCelestialTempestState(this);
     }
 }
