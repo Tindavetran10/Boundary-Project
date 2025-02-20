@@ -117,7 +117,7 @@ MonoBehaviour:
     <LightAttackData>k__BackingField:
       <VFX_LightAttack_Projectile>k__BackingField: {fileID: 1846563170864394, guid: 3bbebb6123d7fdd4fa718a9ea192c837,
         type: 3}
-      <Destination>k__BackingField: {x: 23.577852, y: 44.092632, z: 91.446625}
+      <Destination>k__BackingField: {x: 23.57785, y: 44.09263, z: 91.44662}
       <ProjectileSpeed>k__BackingField: 30
       <WaitingTImeSpawnVFX>k__BackingField: 0.7
     <MagmaStrikeData>k__BackingField:
