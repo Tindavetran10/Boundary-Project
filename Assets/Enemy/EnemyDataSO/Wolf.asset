@@ -20,9 +20,11 @@ MonoBehaviour:
   endurance: 5
   recoverEndurance: 100
   stunDuration: 10
+  atkRange: 2
   speed: 2
   description: Wolf
-  enemySkill: {fileID: 0}
+  amountComboList: 0
+  amoutWaitingCombolist: 0
   spawnPrefab:
   - {fileID: 153244, guid: 9b93a6e74d8b43449bd2d977d5252e48, type: 3}
   maxSpawnAmount: 6

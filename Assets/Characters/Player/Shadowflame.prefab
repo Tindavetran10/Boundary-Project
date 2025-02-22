@@ -1655,6 +1655,7 @@ GameObject:
   - component: {fileID: 8635528935624993427}
   - component: {fileID: 232643087554892146}
   - component: {fileID: 1930475823346667568}
+  - component: {fileID: 2712251827688794744}
   m_Layer: 0
   m_Name: Shadowflame
   m_TagString: Player
@@ -1863,6 +1864,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe68ca44e27360f418b9ecc4452efb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2712251827688794744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203902285789242170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b0ac01b0dba9c4d984d8997aeb3c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: 100
 --- !u!1 &6238147341045984515
 GameObject:
   m_ObjectHideFlags: 0

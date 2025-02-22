@@ -20,7 +20,7 @@ MonoBehaviour:
   endurance: 50
   recoverEndurance: 65
   stunDuration: 20
-  atkRange: 2
+  atkRange: 3
   speed: 1
   description: 
   amountComboList: 2
