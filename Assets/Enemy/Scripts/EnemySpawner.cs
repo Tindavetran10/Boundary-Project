@@ -1,30 +1,38 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
     public EnemyDataSO enemyDataSO;
-    public Transform playerPosition;
-    [SerializeField] private EnemyRace enemyWantToSpawn;
-    public List<EnemyStateMachine> enemies = new List<EnemyStateMachine>();
-    [SerializeField] private bool isSpawned; // true đã spawn, false chưa spawn
-    [SerializeField] private bool isInSpawner;
-    public EnemyData enemyData;
-    [SerializeField] private float timeRespawn;
-    [SerializeField] private int countEnemySpawned;
-    [SerializeField] private int enemyRemoved;
-    public int enemyDomainX;
-    public int enemyDomainZ;
+	public int enemyDomainX;
+	public int enemyDomainZ;
 
-    private void Awake()
+	[SerializeField] private EnemyRace enemyWantToSpawn;
+    [SerializeField] private float timeRespawn;
+
+    [NonSerialized] public EnemyData enemyData;
+	[NonSerialized] public Transform playerPosition;
+
+	private bool isSpawned; // true đã spawn, false chưa spawn
+	private bool isInSpawner;
+	private List<EnemyStateMachine> enemies = new();
+	private int enemyRemoved;
+	private int countEnemySpawned;
+
+	private void Awake()
     {
         enemyData = enemyDataSO.datas.Find(e => e.race == enemyWantToSpawn);
     }
+
     private void Start()
     {
         enemyRemoved = 0;
     }
+
     private void OnDisable()
     {
         StopAllCoroutines();
@@ -67,7 +75,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i< countEnemySpawned; i++)
         {
             var enemy = Instantiate(enemyData.spawnPrefab[Random.Range(0, enemyData.spawnPrefab.Count)],
-                new Vector3(transform.position.x + (countEnemySpawned / 2) + (i + 1), 0, transform.position.z + Random.Range(-i, i + 1)),
+                new Vector3(transform.position.x + (countEnemySpawned / 2) + (i + 1), transform.position.y, transform.position.z + Random.Range(-i, i + 1)),
                 Quaternion.identity, transform);
             enemy.GetComponent<EnemyStateMachine>().spawner = this;
             enemies.Add(enemy.GetComponent<EnemyStateMachine>());
@@ -90,9 +98,11 @@ public class EnemySpawner : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isInSpawner = true;
+            playerPosition = other.transform;
             CheckAndSpawn();
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
