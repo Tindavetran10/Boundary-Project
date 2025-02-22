@@ -128,6 +128,8 @@ public class PlayerGroundedState : PlayerMovementState
         stateMachine.Player.Input.PlayerActions.Skill2.started += OnElectroNovaState;
 
         stateMachine.Player.Input.PlayerActions.Skill3.started += OnCelestialTempestState;
+
+        stateMachine.Player.Input.PlayerActions.Skill4.started += OnFlamingDragonRoarStrikeState;
     }
 
     protected override void RemoveInputActionsCallBack()
@@ -145,6 +147,8 @@ public class PlayerGroundedState : PlayerMovementState
         stateMachine.Player.Input.PlayerActions.Skill2.started -= OnElectroNovaState;
 
         stateMachine.Player.Input.PlayerActions.Skill3.started -= OnCelestialTempestState;
+
+        stateMachine.Player.Input.PlayerActions.Skill4.started -= OnFlamingDragonRoarStrikeState;
     }
     protected virtual void OnMove()
     {
@@ -219,6 +223,11 @@ public class PlayerGroundedState : PlayerMovementState
     protected virtual void OnCelestialTempestState(InputAction.CallbackContext context)
     {
         stateMachine.ChangeState(stateMachine.CelestialTempestState);
+    }
+
+    protected virtual void OnFlamingDragonRoarStrikeState(InputAction.CallbackContext context)
+    {
+        stateMachine.ChangeState(stateMachine.FlamingDragonRoarStrikeState);
     }
     #endregion
 }

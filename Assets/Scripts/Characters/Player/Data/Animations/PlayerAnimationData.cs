@@ -30,6 +30,8 @@ public class PlayerAnimationData
     [SerializeField] private string magmastrikeAttackParameterName = "isMagmaStrikeAttacking";
     [SerializeField] private string electronovaAttackParameterName = "isElectroNovaAttacking";
     [SerializeField] private string celestialtempestAttackParameterName = "isCelestialTempestAttacking";
+    [SerializeField] private string flamingdragonroarstrikeAttackParameterName = "isFlamingDragonRoarStrikeAttacking";
+
 
     [Header("Airborne Parameter Names")]
     [SerializeField] private string fallParameterName = "isFalling";
@@ -54,6 +56,8 @@ public class PlayerAnimationData
     public int MagmaStrikeAttackParameterHash { get; private set; }
     public int ElectroNovaAttackParameterHash { get; private set; }
     public int CelestialTempestAttackParameterHash { get; private set; }
+    public int FlamingDragonRoarStrikeAttackParameterHash { get; private set; }
+
 
     public int FallParameterHash { get; private set; }
 
@@ -81,6 +85,7 @@ public class PlayerAnimationData
         MagmaStrikeAttackParameterHash = Animator.StringToHash(magmastrikeAttackParameterName);
         ElectroNovaAttackParameterHash = Animator.StringToHash(electronovaAttackParameterName);
         CelestialTempestAttackParameterHash = Animator.StringToHash(celestialtempestAttackParameterName);
+        FlamingDragonRoarStrikeAttackParameterHash = Animator.StringToHash(flamingdragonroarstrikeAttackParameterName);
 
         FallParameterHash = Animator.StringToHash(fallParameterName);
     }

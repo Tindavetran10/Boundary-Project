@@ -42,6 +42,9 @@ public class PlayerMovementStateMachine : StateMachine
 
     public PlayerCelestialTempestState CelestialTempestState { get; }
 
+    public PlayerFlamingDragonRoarStrikeState FlamingDragonRoarStrikeState { get; }
+
+
     public PlayerMovementStateMachine(Player player)
     {
         Player = player;
@@ -69,5 +72,6 @@ public class PlayerMovementStateMachine : StateMachine
         Skill1State = new PlayerSkill1State(this);
         ElectroNovaState = new PlayerElectroNovaState(this);
         CelestialTempestState = new PlayerCelestialTempestState(this);
+        FlamingDragonRoarStrikeState = new PlayerFlamingDragonRoarStrikeState(this);
     }
 }

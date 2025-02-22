@@ -117,9 +117,9 @@ MonoBehaviour:
     <LightAttackData>k__BackingField:
       <VFX_LightAttack_Projectile>k__BackingField: {fileID: 1846563170864394, guid: 3bbebb6123d7fdd4fa718a9ea192c837,
         type: 3}
-      <Destination>k__BackingField: {x: 23.57785, y: 44.09263, z: 91.44662}
+      <Destination>k__BackingField: {x: 490.4963, y: 35.55188, z: 98.14101}
       <ProjectileSpeed>k__BackingField: 30
-      <WaitingTImeSpawnVFX>k__BackingField: 0.7
+      <WaitingTImeSpawnVFX>k__BackingField: 0.65
     <MagmaStrikeData>k__BackingField:
       <Effect_MagmaStrike>k__BackingField: {fileID: 8170752514618103492, guid: 79be24f135d46964e9f186bacaca2299,
         type: 3}
@@ -129,11 +129,17 @@ MonoBehaviour:
     <ElectroNovaData>k__BackingField:
       <Effect_ElectroNova>k__BackingField: {fileID: 2280925449003687311, guid: e9e21d88bb89b5246be3b621334555eb,
         type: 3}
-      <Destination>k__BackingField: {x: 144.9137, y: 41.46542, z: 134.6573}
+      <Destination>k__BackingField: {x: 488.0952, y: 34.69864, z: 98.26472}
       <Effect_Speed>k__BackingField: 30
       <WaitingTImeSpawnVFX>k__BackingField: 0.75
     <CelestialTempestData>k__BackingField:
       <Effect_PowerOfLightning>k__BackingField: {fileID: 1266534244052857346, guid: 84a2671b622e73d40b57cbf7db774c2d,
+        type: 3}
+      <Destination>k__BackingField: {x: 0, y: 0, z: 0}
+      <Effect_Speed>k__BackingField: 30
+      <WaitingTImeSpawnVFX>k__BackingField: 0.6
+    <FlamingDragonRoarStrikeData>k__BackingField:
+      <Effect_FlameDestroyer>k__BackingField: {fileID: 4371201884222273529, guid: 754148b94da304e4481533e4091e56dd,
         type: 3}
       <Destination>k__BackingField: {x: 0, y: 0, z: 0}
       <Effect_Speed>k__BackingField: 30
