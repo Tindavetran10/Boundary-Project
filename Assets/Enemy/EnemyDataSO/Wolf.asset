@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66092d9420df4c54e8b333a7cf86aea9, type: 3}
+  m_Name: Wolf
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  race: 4
+  hp: 50
+  defense: 0
+  attack: 10
+  attackCD: 3
+  endurance: 5
+  recoverEndurance: 100
+  stunDuration: 10
+  speed: 2
+  description: Wolf
+  enemySkill: {fileID: 0}
+  spawnPrefab:
+  - {fileID: 153244, guid: 9b93a6e74d8b43449bd2d977d5252e48, type: 3}
+  maxSpawnAmount: 6
+  flyingUnit: 0
