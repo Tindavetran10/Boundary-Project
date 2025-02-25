@@ -46,14 +46,14 @@ public class EnemyBehaviourTree : MonoBehaviour
     }
     IEnumerator WaitingAttack()
     {
-        Debug.LogError("enter attack");
+        Debug.Log("<color=red>enter attack</color>");
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(stateInfo.length);
-        Debug.LogError("waiting time: " + stateInfo.length);
+        Debug.Log("<color=red>waiting time: </color>" + stateInfo.length);
         playerHealth.PlayerTakeDamage(enemyInfomation.EnemyAtk);
         while(comboCount < currentComboList)
         {
-            Debug.LogError($"{comboCount}/{currentComboList}, {comboCount < currentComboList}");
+            Debug.Log($"<color=red>{comboCount}/{currentComboList}, {comboCount < currentComboList}</color>");
             comboCount++;
             SetAnimValue("Combo", comboCount);
             SetAnimValue("isCombo", true);

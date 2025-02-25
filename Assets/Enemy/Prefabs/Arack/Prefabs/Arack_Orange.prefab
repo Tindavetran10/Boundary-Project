@@ -1229,7 +1229,7 @@ MonoBehaviour:
   patrolPoint: {x: 0, y: 0, z: 0}
   enemyDirection: {x: 0, y: 0, z: 0}
   spawnPoint: {x: 0, y: 0, z: 0}
-  maxDistance: 20
+  chasingDistance: 20
   isDead: 0
 --- !u!114 &-4696994413251772498
 MonoBehaviour:
@@ -1621,7 +1621,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5691678646715219391}
-  m_LocalRotation: {x: -0.14986141, y: 0.33984783, z: -0.05495046, w: -0.9268363}
+  m_LocalRotation: {x: -0.018768126, y: 0.8102568, z: -0.02598609, w: -0.5851978}
   m_LocalPosition: {x: 0, y: 0, z: -0.0411928}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
