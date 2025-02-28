@@ -75,7 +75,10 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i< countEnemySpawned; i++)
         {
             var enemy = Instantiate(enemyData.spawnPrefab[Random.Range(0, enemyData.spawnPrefab.Count)],
-                new Vector3(transform.position.x + (countEnemySpawned / 2) + (i + 1), transform.position.y, transform.position.z + Random.Range(-i, i + 1)),
+                new Vector3(
+                    transform.position.x + (countEnemySpawned / 2) + (i + 1), 
+                    transform.position.y, 
+                    transform.position.z + Random.Range(-i, i + 1)),
                 Quaternion.identity, transform);
             enemy.GetComponent<EnemyStateMachine>().spawner = this;
             enemies.Add(enemy.GetComponent<EnemyStateMachine>());
