@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int playerHP = 100;
 
+    private Player player;
 
     public void PlayerTakeDamage(int damagereceived)
     {
