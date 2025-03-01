@@ -26,7 +26,8 @@ public class PlayerFlamingDragonRoarStrikeState : PlayerCombatState
 
         base.Enter();
 
-        //GameManager.Instance._playerMana.ManaConsumption(stateMachine.Player.Data.GroundedData.FlamingDragonRoarStrikeData.Consumption);
+        GameManager.Instance._playerMana.ManaConsumption(288);
+
         StartAnimation(stateMachine.Player.AnimationData.FlamingDragonRoarStrikeAttackParameterHash);
 
         firePoint = stateMachine.Player.transform.Find("FirePoint");

@@ -31,9 +31,7 @@ public class PlayerMovementState : IState
     public virtual void Enter()
     {
         Debug.Log("State: " + GetType().Name);
-        //Debug.Log(stateMachine.Player.Data.GroundedData.FlamingDragonRoarStrikeData.Consumption);
-        /*GameManager.Instance._playerMana.ManaConsumption(30);
-        Debug.Log(stateMachine.Player.Data.UnitsData.ManaUnitData.Mana);*/
+
         AddInputActionsCallBack();
     }
 

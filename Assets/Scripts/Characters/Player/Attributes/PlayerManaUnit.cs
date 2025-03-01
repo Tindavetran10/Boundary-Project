@@ -46,7 +46,7 @@ public class PlayerManaUnit
         }
         if (_currentMana < _currentMaxMana)
         {
-            _currentMana += 0.1f;
+            _currentMana += 0.7f;
         }
         if ( _currentMana > _currentMaxMana)
         {
