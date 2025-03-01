@@ -32,7 +32,7 @@ public class PlayerHealthUnit
     }
 
     #region Main Methods
-    public void DmgHealthUnit(float dmgAmount)
+    public void PlayerTakeDmg(float dmgAmount)
     {
         if (_currentHealth > 0 )
         {

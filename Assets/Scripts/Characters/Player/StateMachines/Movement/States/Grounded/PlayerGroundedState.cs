@@ -207,26 +207,46 @@ public class PlayerGroundedState : PlayerMovementState
 
     protected virtual void OnLightAttackStarted(InputAction.CallbackContext context)
     {
+        if (TimeSkillControll.TimeSkillInstance.isCoolDwn1 == true)
+        {
+            return;
+        }
         stateMachine.ChangeState(stateMachine.LightAttackState);
     }
 
     protected virtual void OnSkill1State(InputAction.CallbackContext context)
     {
+        if (TimeSkillControll.TimeSkillInstance.isCoolDwn2 == true)
+        {
+            return;
+        }
         stateMachine.ChangeState(stateMachine.Skill1State);
     }
 
     protected virtual void OnElectroNovaState(InputAction.CallbackContext context)
     {
+        if (TimeSkillControll.TimeSkillInstance.isCoolDwn3 == true)
+        {
+            return;
+        }
         stateMachine.ChangeState(stateMachine.ElectroNovaState);
     }
 
     protected virtual void OnCelestialTempestState(InputAction.CallbackContext context)
     {
+        if (TimeSkillControll.TimeSkillInstance.isCoolDwn4 == true)
+        {
+            return;
+        }
         stateMachine.ChangeState(stateMachine.CelestialTempestState);
     }
 
     protected virtual void OnFlamingDragonRoarStrikeState(InputAction.CallbackContext context)
     {
+        if (TimeSkillControll.TimeSkillInstance.isCoolDwn5 == true)
+        {
+            return;
+        }
         stateMachine.ChangeState(stateMachine.FlamingDragonRoarStrikeState);
     }
     #endregion

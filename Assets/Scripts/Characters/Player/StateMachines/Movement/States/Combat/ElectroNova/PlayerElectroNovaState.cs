@@ -23,6 +23,8 @@ public class PlayerElectroNovaState : PlayerCombatState
 
         base.Enter();
 
+        GameManager.Instance._playerMana.ManaConsumption(110);
+
         StartAnimation(stateMachine.Player.AnimationData.ElectroNovaAttackParameterHash);
 
         firePoint = stateMachine.Player.transform.Find("FirePoint");
