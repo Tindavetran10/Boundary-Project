@@ -30,5 +30,5 @@ MonoBehaviour:
   - {fileID: 5913095231124562995, guid: 63eab75d5d03845488ab034b61f38141, type: 3}
   - {fileID: 6182247980586143319, guid: dc25a6bc3872048438c56a7e3f3f59ba, type: 3}
   - {fileID: 5447342107732448593, guid: b31b5231d06d4044589d7f76777bc99f, type: 3}
-  maxSpawnAmount: 4
+  maxSpawnAmount: 1
   flyingUnit: 0
