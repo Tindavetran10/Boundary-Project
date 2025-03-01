@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 
     private PlayerMovementStateMachine movementStateMachine;
 
+    [SerializeField] PlayerManaBar manaBar;
 
     private void Awake()
     {
@@ -72,6 +73,11 @@ public class Player : MonoBehaviour
         movementStateMachine.HandleInput();
 
         movementStateMachine.Update();
+
+        GameManager.Instance._playerMana.ManaUnit();
+        manaBar.SetMana(GameManager.Instance._playerMana.Mana);
+        GameManager.Instance._playerHealth.HealUnit();
+        Debug.Log(GameManager.Instance._playerMana.Mana);
     }
      
     private void FixedUpdate()

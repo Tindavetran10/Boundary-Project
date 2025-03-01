@@ -10,5 +10,6 @@ public class PlayerFlamingDragonRoarStrikeData
     [field: SerializeField] public Vector3 Destination { get; set; }
     [field: SerializeField] public float Effect_Speed { get; set; } = 30f;
     [field: SerializeField] public float WaitingTImeSpawnVFX { get; set; } = 30f;
+    [field: SerializeField] public float Consumption { get; set; } = 30f;
 
 }
