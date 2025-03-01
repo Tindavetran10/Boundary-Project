@@ -7,7 +7,6 @@ public partial class EnemyStateMachine : MonoBehaviour
 	//điều khiển warning state
 	private void WarningState()
 	{
-		RotateToTarget(spawner.playerPosition.position);
 		// nếu player tiến vào vùng truy đuổi
 		if (PlayerEnterArea(enemyInfomation.chaseArea))
 		{
@@ -16,6 +15,7 @@ public partial class EnemyStateMachine : MonoBehaviour
 			LoadAnim("isMove", true);
 			LoadAnim("isWarning", false);
 			ChangeState(EnemyState.Chase);
+			return;
 		}
 		//nếu player ra khỏi vùng cảnh giác
 		if (!PlayerEnterArea(enemyInfomation.warningArea))
@@ -26,6 +26,8 @@ public partial class EnemyStateMachine : MonoBehaviour
 			LoadAnim("isMove", false);
 			LoadAnim("isWarning", false);
 			ChangeState(EnemyState.Idle);
+			return;
 		}
+		RotateToTarget(spawner.playerPosition.position);
 	}
 }

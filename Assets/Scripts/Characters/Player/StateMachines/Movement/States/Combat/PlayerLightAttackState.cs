@@ -32,11 +32,6 @@ public class PlayerLightAttackState : PlayerCombatState
 
         base.Enter();
 
-        GameManager.Instance._playerMana.ManaConsumption(30);
-
-        Debug.Log(GameManager.Instance._playerMana.Mana);
-
-
         StartAnimation(stateMachine.Player.AnimationData.LightAttackParameterHash);
 
         firePoint = stateMachine.Player.transform.Find("FirePoint");

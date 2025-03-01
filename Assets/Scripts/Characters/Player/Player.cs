@@ -1,9 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+
 [RequireComponent(typeof(PlayerInputs))]
 
 public class Player : MonoBehaviour
 {
+    public static Player PlayerInstance { get; private set; }
+
     [field: Header("Reference")]
     [field: SerializeField] public PlayerSO Data { get; private set; }
 
@@ -27,10 +31,26 @@ public class Player : MonoBehaviour
 
     private PlayerMovementStateMachine movementStateMachine;
 
+    [field: Header("UIManager")]
+    public Image lightAttackImg;
+    public Image magmaStrikeImg;
+    public Image electroNovaImg;
+    public Image celestialTempestImg;
+    public Image flamingDragonRoarStrikeImg;
+
     [SerializeField] PlayerManaBar manaBar;
 
     private void Awake()
     {
+        if (PlayerInstance != null && PlayerInstance != this)
+        {
+            Destroy(PlayerInstance);
+        }
+        else
+        {
+            PlayerInstance = this;
+        }
+
         Rigidbody = GetComponent<Rigidbody>();
         Animator = GetComponentInChildren<Animator>();
         Input = GetComponent<PlayerInputs>();
