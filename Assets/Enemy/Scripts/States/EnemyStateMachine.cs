@@ -143,7 +143,16 @@ public partial class EnemyStateMachine : MonoBehaviour
     public void ChangeState(EnemyState stateChanged)
     {
         currentState = stateChanged;
+        print("State changed to " + stateChanged);
     }
+
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, enemyInfomation.AtkRange);
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(transform.position, enemyInfomation.chaseArea);
+	}
 }
 
 public enum EnemyState
