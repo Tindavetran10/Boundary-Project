@@ -25,6 +25,8 @@ public class PlayerCelestialTempestState : PlayerCombatState
 
         base.Enter();
 
+        GameManager.Instance._playerMana.ManaConsumption(155);
+
         StartAnimation(stateMachine.Player.AnimationData.CelestialTempestAttackParameterHash);
 
         startPoint = stateMachine.Player.transform;

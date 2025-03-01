@@ -27,6 +27,8 @@ public class PlayerSkill1State : PlayerCombatState
 
         base.Enter();
 
+        GameManager.Instance._playerMana.ManaConsumption(68);
+
         StartAnimation(stateMachine.Player.AnimationData.MagmaStrikeAttackParameterHash);
 
         firePoint = stateMachine.Player.transform;

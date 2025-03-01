@@ -15,7 +15,7 @@ public class EnemyBehaviourTree : MonoBehaviour
     private int comboCount = 1;
     public int currentComboList;
     private bool completedAtk;
-    PlayerHealth playerHealth;
+    //PlayerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class EnemyBehaviourTree : MonoBehaviour
         completedAtk = true;
         animator = stateMachine.animator;
         currentComboList = stateMachine.spawner.GetEnemyComboList();
-        playerHealth = stateMachine.spawner.playerPosition.gameObject.GetComponent<PlayerHealth>();
+        //playerHealth = stateMachine.spawner.playerPosition.gameObject.GetComponent<PlayerHealth>();
     }
     public void CountdownTimer()
     {
@@ -50,7 +50,8 @@ public class EnemyBehaviourTree : MonoBehaviour
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(stateInfo.length);
         Debug.Log("<color=red>waiting time: </color>" + stateInfo.length);
-        playerHealth.PlayerTakeDamage(enemyInfomation.EnemyAtk);
+        //playerHealth.PlayerTakeDamage(enemyInfomation.EnemyAtk);
+        GameManager.Instance._playerHealth.PlayerTakeDmg(enemyInfomation.EnemyAtk);
         while(comboCount < currentComboList)
         {
             Debug.Log($"<color=red>{comboCount}/{currentComboList}, {comboCount < currentComboList}</color>");
@@ -59,7 +60,8 @@ public class EnemyBehaviourTree : MonoBehaviour
             SetAnimValue("isCombo", true);
             stateInfo = animator.GetCurrentAnimatorStateInfo(0); 
             yield return new WaitForSeconds(stateInfo.length);
-            playerHealth.PlayerTakeDamage(enemyInfomation.EnemyAtk);
+            //playerHealth.PlayerTakeDamage(enemyInfomation.EnemyAtk);
+            GameManager.Instance._playerHealth.PlayerTakeDmg(enemyInfomation.EnemyAtk);
         }
         comboCount = 1;
         SetAnimValue("isAttack", false);
