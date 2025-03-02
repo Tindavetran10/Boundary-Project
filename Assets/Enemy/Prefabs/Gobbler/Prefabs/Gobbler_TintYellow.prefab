@@ -753,9 +753,10 @@ GameObject:
   - component: {fileID: 3817526760772014752}
   - component: {fileID: 8235807214092600885}
   - component: {fileID: -6361491404371619623}
+  - component: {fileID: 196491680827723842}
   m_Layer: 0
   m_Name: Gobbler_TintYellow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -923,6 +924,27 @@ MonoBehaviour:
   enemyInfomation: {fileID: -8725007534185732166}
   timerAttack: 0
   currentComboList: 0
+--- !u!65 &196491680827723842
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447342107732448593}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.3355577, y: 3.2892241, z: 3.6882226}
+  m_Center: {x: 0.0000075101852, y: 1.539264, z: 0.24827492}
 --- !u!1 &5459417599943302233
 GameObject:
   m_ObjectHideFlags: 0
