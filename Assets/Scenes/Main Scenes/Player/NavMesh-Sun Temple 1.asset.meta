@@ -1,12 +1,6 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Assets Used/Viking Village.meta
-guid: a9a0190cfdef03c41b405abe72fe6a25
-folderAsset: yes
-DefaultImporter:
-========
 guid: 7bd3239ce9eabdb4d95c83a5f4e0ea14
 NativeFormatImporter:
->>>>>>>> main:Assets/Scenes/Main Scenes/Player/NavMesh-Sun Temple 1.asset.meta
   externalObjects: {}
   mainObjectFileID: 23800000
   userData: 
