@@ -25,3 +25,4 @@ public class EnemyManager : MonoBehaviour
     {
         enemyKilled?.Invoke(type);
     }
+}
