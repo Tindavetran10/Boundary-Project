@@ -88,6 +88,10 @@ public class ProjectileMoveScript : MonoBehaviour {
     }
 
 	void OnCollisionEnter (Collision co) {
+        if(co.gameObject.tag == "Enemy")
+        {
+            co.gameObject.GetComponent<EnemyInfomation>().EnemyTakeDame(100);
+        }
         if (!bounce)
         {
             if (co.gameObject.tag != "Bullet" && !collided)
