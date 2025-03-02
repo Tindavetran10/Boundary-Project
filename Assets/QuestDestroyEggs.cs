@@ -17,6 +17,19 @@ public class QuestDestroyEggs : MonoBehaviour
         {
             questPanel.SetActive(false); // ?n panel khi m?i vào game
         }
+
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.enemyKilled += OnEnemyKilled; // L?ng nghe s? ki?n Enemy ch?t
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.enemyKilled -= OnEnemyKilled; // H?y ??ng ký khi object b? h?y
+        }
     }
 
     public void StartQuest()
@@ -30,26 +43,29 @@ public class QuestDestroyEggs : MonoBehaviour
             }
             if (questText != null)
             {
-                questText.text = "Kill Gobbles (0/5)";
+                questText.text = "Kill 5 Gobble's Eggs (0/5)";
             }
         }
     }
 
-    // G?i hàm này khi m?t qu? tr?ng Gobble b? phá h?y
-    public void DestroyEgg()
+    void OnEnemyKilled(EnemyRace enemyType)
     {
         if (!questStarted) return;
 
-        eggsDestroyed++;
-
-        if (questText != null)
+        // Ch? c?ng ?i?m n?u k? ??ch là GobbleEgg
+        if (enemyType == EnemyRace.Gobbler)
         {
-            questText.text = $"Kill Gobbles (0/5) ({eggsDestroyed}/{eggsRequired})";
-        }
+            eggsDestroyed++;
 
-        if (eggsDestroyed >= eggsRequired)
-        {
-            CompleteQuest();
+            if (questText != null)
+            {
+                questText.text = $"Kill 5 Gobble's Eggs ({eggsDestroyed}/{eggsRequired})";
+            }
+
+            if (eggsDestroyed >= eggsRequired)
+            {
+                CompleteQuest();
+            }
         }
     }
 
@@ -57,7 +73,7 @@ public class QuestDestroyEggs : MonoBehaviour
     {
         if (questText != null)
         {
-            questText.text = "Completed";
+            questText.text = "Nhi?m v? hoàn thành!Complete";
         }
         if (reward != null)
         {
