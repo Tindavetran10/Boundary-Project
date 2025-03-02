@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Assets Used/VFX.meta
+guid: 01db6f9d81482374ebaf37618821b064
+folderAsset: yes
+DefaultImporter:
+========
 guid: 7507cffdb4fb37549a197ba239a5d4b1
 PrefabImporter:
+>>>>>>>> main:Assets/Prefabs/KnightNPC_Group.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

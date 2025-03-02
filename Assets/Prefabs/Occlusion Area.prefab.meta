@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs.meta
+guid: 9f0ecbfc8ca1b6647953156454511fea
+folderAsset: yes
+DefaultImporter:
+========
 guid: f23301dd3e8d8f24ca103d35e9e885ec
 PrefabImporter:
+>>>>>>>> main:Assets/Prefabs/Occlusion Area.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
