@@ -100,7 +100,6 @@ public class EnemyInfomation : MonoBehaviour
             Debug.Log("Enemy died");
             stateMachine.isDead = true;
             stateMachine.ChangeState(EnemyState.Dead);
-            EnemyManager.Instance.KillEnemy(race);
         }
     }
 
