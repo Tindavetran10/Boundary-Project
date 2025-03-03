@@ -81130,7 +81130,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.3
-    functionName: PlayMeleeEvent
+    functionName: PlayLightAttackEvent
     data: event:/SFX/LightAttack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
