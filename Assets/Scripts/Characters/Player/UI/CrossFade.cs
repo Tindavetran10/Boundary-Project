@@ -16,6 +16,7 @@ public class CrossFade : SceneTransition
     public override IEnumerator AnimateTransitionOut()
     {
         var tweener = crossFade.DOFade(0f, 1f);
+        Debug.Log("Da chuyen scene thanh cong");
         yield return tweener.WaitForCompletion();
     }
 }
