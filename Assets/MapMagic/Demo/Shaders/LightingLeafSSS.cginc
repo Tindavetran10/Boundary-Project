@@ -4,7 +4,7 @@
 #include "UnityPBSLighting.cginc"
 #include "LeafFunctions.cginc"
 
-//need a custom light model because o.Emission does not recieve shadows!
+//need a custom light model because o.Emission does not receive shadows!
 inline half4 LightingLeafSSS(inout SurfaceOutputStandardSpecular s, half3 viewDir, UnityGI gi)
 {
 	half mask = s.Emission;  //1;// abs(s.Albedo.g - s.Albedo.r) * 4;
@@ -53,5 +53,18 @@ inline void LightingLeafSSS_GI(
 	LightingStandardSpecular_GI(s, data, gi);
 
 }
+
+inline void LightingLeafSSS_PrePass_GI(
+	SurfaceOutputStandardSpecular s,
+	UnityGIInput data,
+	inout UnityGI gi)
+{
+	// Use the StandardSpecular GI function as a base
+	LightingStandardSpecular_GI(s, data, gi);
+    
+	// Add any custom GI calculations for your leaf SSS prepass if needed
+}
+
+
 
 #endif
