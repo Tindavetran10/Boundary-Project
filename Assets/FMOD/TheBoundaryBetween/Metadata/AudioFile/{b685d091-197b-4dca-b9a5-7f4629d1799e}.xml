@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b685d091-197b-4dca-b9a5-7f4629d1799e}">
+		<property name="assetPath">
+			<value>SFX/ElectroNova(Late).wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5015646258503401</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d2922a86-3866-410f-92da-769ae9ad76a6}</destination>
+		</relationship>
+	</object>
+</objects>

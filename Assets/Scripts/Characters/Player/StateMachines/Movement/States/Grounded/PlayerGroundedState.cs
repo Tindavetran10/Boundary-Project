@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerGroundedState : PlayerMovementState
 {
     private SlopeData slopeData;
+
     public PlayerGroundedState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
     {
         slopeData = stateMachine.Player.ColliderUtility.SlopeData;

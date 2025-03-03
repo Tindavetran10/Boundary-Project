@@ -11,6 +11,9 @@ public class PlayerMovementState : IState
     protected PlayerGroundedData movementData;
     protected PlayerAirborneData airborneData;
 
+    protected MainMenu mainMenu;
+    public bool isPauseTheGame = false;
+
     public PlayerMovementState(PlayerMovementStateMachine playerMovementStateMachine)
     {
         stateMachine = playerMovementStateMachine;
@@ -189,6 +192,8 @@ public class PlayerMovementState : IState
         stateMachine.Player.Input.PlayerActions.Movement.started += OnMovementPerformed;
 
         stateMachine.Player.Input.PlayerActions.Movement.canceled += OnMovementCanceled;
+
+        stateMachine.Player.Input.PlayerActions.Pause.started += PauseTheGame;
     }
 
     protected virtual void RemoveInputActionsCallBack()
@@ -200,6 +205,8 @@ public class PlayerMovementState : IState
         stateMachine.Player.Input.PlayerActions.Movement.started -= OnMovementPerformed;
 
         stateMachine.Player.Input.PlayerActions.Movement.canceled -= OnMovementCanceled;
+
+        stateMachine.Player.Input.PlayerActions.Pause.started -= PauseTheGame;
     }
 
     protected Vector3 GetMovementInputDirection()
@@ -415,6 +422,12 @@ public class PlayerMovementState : IState
     private void OnMovementPerformed(InputAction.CallbackContext context)
     {
         UpdateCameraRecenteringState(context.ReadValue<Vector2>());
+    }
+
+    protected virtual void PauseTheGame(InputAction.CallbackContext context)
+    {
+        //isPauseTheGame = true;
+        Debug.Log(isPauseTheGame);
     }
     #endregion
 }
