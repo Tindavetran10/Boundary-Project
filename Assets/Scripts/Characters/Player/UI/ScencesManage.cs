@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static System.TimeZoneInfo;
 
 public class ScencesManage : MonoBehaviour
 {
@@ -14,16 +15,15 @@ public class ScencesManage : MonoBehaviour
 
     private SceneTransition[] transitions;
 
-    private void Awake()
+    public void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(Instance);
         }
         else
         {
-            Destroy(gameObject);
+            Instance = this;
         }
     }
 
@@ -35,12 +35,13 @@ public class ScencesManage : MonoBehaviour
     public void LoadScene(string sceneName, string transitionName)
     {
         StartCoroutine(LoadSceneAsync(sceneName, transitionName));
+        Debug.Log("Dang chuyen Scene");
     }
 
     private IEnumerator LoadSceneAsync(string sceneName, string transitionName)
     {
         SceneTransition transition = transitions.First(t => t.name == transitionName);
-
+        
         AsyncOperation scene = SceneManager.LoadSceneAsync(sceneName);
         scene.allowSceneActivation = false;
 
