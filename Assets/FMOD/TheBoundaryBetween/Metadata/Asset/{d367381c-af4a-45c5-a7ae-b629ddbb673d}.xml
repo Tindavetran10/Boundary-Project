@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{d367381c-af4a-45c5-a7ae-b629ddbb673d}">
+		<property name="assetPath">
+			<value>SFX/Fantasy Menu SFX/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d2922a86-3866-410f-92da-769ae9ad76a6}</destination>
+		</relationship>
+	</object>
+</objects>
