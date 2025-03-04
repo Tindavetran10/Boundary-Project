@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
 
     public GameObject MenuCanvas;
 
+    public CursonVisible cursonVisible;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,22 +23,20 @@ public class MainMenu : MonoBehaviour
         string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
         Debug.Log(sceneName);
         Debug.Log("Bat Dau Chuyen scene");
-        ScencesManage.Instance.LoadScene(sceneName, CrossFade.name);
     }
 
     public void PauseTheGame()
     {
         Time.timeScale = 0f;
         MenuCanvas.SetActive(true);
-        
+        cursonVisible.isPauseGame = true;
     }
 
     public void ContinueTheScene()
     {
         MenuCanvas.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         Time.timeScale = 1f;
+        cursonVisible.isPauseGame = false;
     }
 
     public void BackToMenu()
@@ -45,7 +45,6 @@ public class MainMenu : MonoBehaviour
         string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
         Debug.Log(sceneName);
         Debug.Log("Bat Dau Chuyen scene");
-        ScencesManage.Instance.LoadScene(sceneName, CrossFade.name);
     }
 
     public void ExitGame()
