@@ -31,12 +31,16 @@ public class Player : MonoBehaviour
 
     private PlayerMovementStateMachine movementStateMachine;
 
+    private PlayerMovementState movementSate;
+
     [field: Header("UIManager")]
     public Image lightAttackImg;
     public Image magmaStrikeImg;
     public Image electroNovaImg;
     public Image celestialTempestImg;
     public Image flamingDragonRoarStrikeImg;
+
+    public MainMenu mainMenu;
 
     [SerializeField] PlayerManaBar manaBar;
 
@@ -94,6 +98,8 @@ public class Player : MonoBehaviour
 
         movementStateMachine.Update();
 
+        PauseGame();
+
         GameManager.Instance._playerMana.ManaUnit();
         manaBar.SetMana(GameManager.Instance._playerMana.Mana);
         GameManager.Instance._playerHealth.HealUnit();
@@ -128,5 +134,22 @@ public class Player : MonoBehaviour
     public void DestroyEffect(GameObject gameObject, float effectDuration)
     {
         Destroy(gameObject, effectDuration);
+    }
+
+    public void PauseGame()
+    {
+        if (mainMenu == null)
+        {
+            Debug.Log("Khong thay Main Menu");
+        }
+
+        if (Input.PlayerActions.Pause.WasPressedThisFrame())
+        {
+            Debug.Log(Input.PlayerActions.Pause.WasPressedThisFrame());
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            mainMenu.PauseTheGame();
+            Debug.Log("Trang thai tro chuot: " + Cursor.visible);
+        }
     }
 }
