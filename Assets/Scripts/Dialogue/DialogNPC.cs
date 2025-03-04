@@ -25,7 +25,7 @@ public class DialogNPC : MonoBehaviour
 
     private void Update()
     {
-        if (isInteracting && Input.GetKeyDown(KeyCode.E))
+        if (isInteracting && Input.GetKeyDown(KeyCode.G))
         {
             dialogManager.ShowMessage(dialogData);
         }

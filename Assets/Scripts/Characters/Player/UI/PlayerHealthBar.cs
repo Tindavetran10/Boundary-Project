@@ -8,10 +8,10 @@ public class PlayerHealthBar : MonoBehaviour
     [SerializeField] Slider _healthSlider;
 
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         _healthSlider = GetComponent<Slider>();
-    }
+    }*/
 
     public void SetMaxHealth(float maxHealth)
     {
