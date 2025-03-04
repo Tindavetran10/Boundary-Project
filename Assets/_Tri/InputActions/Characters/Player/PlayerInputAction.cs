@@ -143,6 +143,15 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BackToMainMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""24d23475-b931-4cb3-a723-3d7f4065ff86"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -332,6 +341,17 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89d4fcbe-e653-42b4-b874-8de0f4ef9393"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BackToMainMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -353,6 +373,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         m_Player_Skill3 = m_Player.FindAction("Skill3", throwIfNotFound: true);
         m_Player_Skill4 = m_Player.FindAction("Skill4", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_BackToMainMenu = m_Player.FindAction("BackToMainMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -427,6 +448,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Skill3;
     private readonly InputAction m_Player_Skill4;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_BackToMainMenu;
     public struct PlayerActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -444,6 +466,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         public InputAction @Skill3 => m_Wrapper.m_Player_Skill3;
         public InputAction @Skill4 => m_Wrapper.m_Player_Skill4;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @BackToMainMenu => m_Wrapper.m_Player_BackToMainMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -492,6 +515,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @BackToMainMenu.started += instance.OnBackToMainMenu;
+            @BackToMainMenu.performed += instance.OnBackToMainMenu;
+            @BackToMainMenu.canceled += instance.OnBackToMainMenu;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -535,6 +561,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @BackToMainMenu.started -= instance.OnBackToMainMenu;
+            @BackToMainMenu.performed -= instance.OnBackToMainMenu;
+            @BackToMainMenu.canceled -= instance.OnBackToMainMenu;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -567,5 +596,6 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         void OnSkill3(InputAction.CallbackContext context);
         void OnSkill4(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnBackToMainMenu(InputAction.CallbackContext context);
     }
 }

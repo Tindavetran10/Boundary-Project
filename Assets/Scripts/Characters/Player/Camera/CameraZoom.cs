@@ -17,10 +17,14 @@ public class CameraZoom : MonoBehaviour
 
     private float currentTargetDistance;
 
+    //public CursonVisible cursonVisible;
+
     private void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        /*Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;*/
+
+        //.isPauseGame = false;
 
         framingTransposer = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>();
         inputProvider = GetComponent<CinemachineInputProvider>();

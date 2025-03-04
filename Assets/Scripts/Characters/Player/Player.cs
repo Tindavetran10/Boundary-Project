@@ -41,8 +41,10 @@ public class Player : MonoBehaviour
     public Image flamingDragonRoarStrikeImg;
 
     public MainMenu mainMenu;
+    public CursonVisible cursonVisible;
 
     [SerializeField] PlayerManaBar manaBar;
+    [SerializeField] PlayerHealthBar healthBar;
 
     private void Awake()
     {
@@ -103,7 +105,7 @@ public class Player : MonoBehaviour
         GameManager.Instance._playerMana.ManaUnit();
         manaBar.SetMana(GameManager.Instance._playerMana.Mana);
         GameManager.Instance._playerHealth.HealUnit();
-        Debug.Log(GameManager.Instance._playerMana.Mana);
+        healthBar.SetHealth(GameManager.Instance._playerHealth.Health);
     }
      
     private void FixedUpdate()
@@ -143,13 +145,27 @@ public class Player : MonoBehaviour
             Debug.Log("Khong thay Main Menu");
         }
 
-        if (Input.PlayerActions.Pause.WasPressedThisFrame())
+        if (cursonVisible == null)
         {
-            Debug.Log(Input.PlayerActions.Pause.WasPressedThisFrame());
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            mainMenu.PauseTheGame();
-            Debug.Log("Trang thai tro chuot: " + Cursor.visible);
+            Debug.Log("Khong thay Chuot");
+            return;
+        }
+
+        if (cursonVisible.isPauseGame == false)
+        {
+            if (Input.PlayerActions.Pause.WasPressedThisFrame())
+            {
+                Debug.Log(Input.PlayerActions.Pause.WasPressedThisFrame());
+                mainMenu.PauseTheGame();
+            }
+        }
+        else if (cursonVisible.isPauseGame == true)
+        {
+            if (Input.PlayerActions.Pause.WasPressedThisFrame())
+            {
+                Debug.Log(Input.PlayerActions.Pause.WasPressedThisFrame());
+                mainMenu.ContinueTheScene();
+            }
         }
     }
 }
