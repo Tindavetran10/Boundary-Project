@@ -1,5 +1,4 @@
 using UnityEngine;
-using FMODUnity;
 
 namespace Audio
 {
@@ -13,11 +12,5 @@ namespace Audio
                 Debug.LogError("More than one Audio Manager in scene.");
             Instance = this;
         }
-        
-        public void PlayOneShot(EventReference eventReference, Vector3 worldPosition)
-        {
-            RuntimeManager.PlayOneShot(eventReference, worldPosition);
-        }
-        
     }
 }

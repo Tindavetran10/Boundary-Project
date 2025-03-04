@@ -5,7 +5,7 @@
 			<value>SFX/</value>
 		</property>
 		<relationship name="masterAssetFolder">
-			<destination>{d2922a86-3866-410f-92da-769ae9ad76a6}</destination>
+			<destination>{762a7d6a-3c02-40e5-a184-3cc6b65a16a6}</destination>
 		</relationship>
 	</object>
 </objects>
